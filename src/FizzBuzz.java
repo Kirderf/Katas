@@ -1,19 +1,17 @@
-public class FizzBuzz {
-    private static int counter = 1;
+import java.util.stream.IntStream;
 
+public class FizzBuzz {
     public static void main(String[] args) {
-        while (counter <= 100){
-            if (counter % 3 == 0 && counter % 5 == 0){
+        IntStream.range(1,100).forEachOrdered(s -> {
+            if (s % 3 == 0 && s % 5 == 0){
                 System.out.print("FizzBuzz");
-            }else if (counter % 3 == 0){
+            }else if (s % 3 == 0){
                 System.out.print("Fizz");
-            }else if (counter % 5 == 0){
+            }else if (s % 5 == 0){
                 System.out.print("Buzz");
             }else {
-                System.out.print(counter);
+                System.out.print(s);
             }
-            System.out.print(", ");
-            counter++;
-        }
+        });
     }
 }
